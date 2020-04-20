@@ -43,7 +43,7 @@
       }
       return;
     }
-    if (num > max) 
+    if (num > max)
       return String(num)[0];
     else if (!isNaN(num)) {
       if (value.length === 2 || (blur && type === 'MM'))
@@ -265,12 +265,12 @@
           mandatory: '<' // true or false
         },
         template: '<ng-form name="timeForm">' +
-          '<button class="md-icon-button md-button md-ink-ripple" type="button" ng-click="!readOnly && showPicker($event)" ng-disabled="readOnly">' +
-          '<md-icon>' +
-          '<i class="material-icons">&#xE192;</i>' +
-          '</md-icon>' +
-          '<div class="md-ripple-container"></div>' +
-          '</button>' +
+          // '<button class="md-icon-button md-button md-ink-ripple" type="button" ng-click="!readOnly && showPicker($event)" ng-disabled="readOnly">' +
+          // '<md-icon>' +
+          // '<i class="material-icons">&#xE192;</i>' +
+          // '</md-icon>' +
+          // '<div class="md-ripple-container"></div>' +
+          // '</button>' +
           '<md-hours-minutes type="HH" ng-model="ngModel" message="{{message.hour}}" read-only="readOnly" mandatory="mandatory"></md-hours-minutes>' +
           '<span class="time-colon">:</span>' +
           '<md-hours-minutes type="MM" ng-model="ngModel" message="{{message.minute}}" read-only="readOnly" mandatory="mandatory"></md-hours-minutes>' +

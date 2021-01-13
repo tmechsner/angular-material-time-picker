@@ -61,6 +61,7 @@
         restrict: 'E',
         scope: {
           type: '@',
+          placeholder: '@',
           message: '@',
           ngModel: '=',
           readOnly: '<', // true or false
@@ -73,7 +74,7 @@
           'name="time_{{type}}"' +
           'ng-model="time[type]"' +
           'ng-change="handleInput()"' +
-          'placeholder="{{type}}"' +
+          'placeholder="{{placeholder}}"' +
           'maxlength="2"' +
           'ng-blur="handleInput(true)"' +
           'ng-keydown="handleKeypress($event)" ng-disabled="readOnly"/>' +
@@ -260,6 +261,8 @@
         restrict: 'E',
         scope: {
           message: '<',
+          placeholderHours: '<',
+          placeholderMinutes: '<',
           ngModel: '=',
           readOnly: '<', // true or false
           mandatory: '<' // true or false
@@ -271,9 +274,9 @@
           // '</md-icon>' +
           // '<div class="md-ripple-container"></div>' +
           // '</button>' +
-          '<md-hours-minutes type="HH" ng-model="ngModel" message="{{message.hour}}" read-only="readOnly" mandatory="mandatory"></md-hours-minutes>' +
+          '<md-hours-minutes type="HH" placeholder="{{placeholderHours}}" ng-model="ngModel" message="{{message.hour}}" read-only="readOnly" mandatory="mandatory"></md-hours-minutes>' +
           '<span class="time-colon">:</span>' +
-          '<md-hours-minutes type="MM" ng-model="ngModel" message="{{message.minute}}" read-only="readOnly" mandatory="mandatory"></md-hours-minutes>' +
+          '<md-hours-minutes type="MM" placeholder="{{placeholderMinutes}}" ng-model="ngModel" message="{{message.minute}}" read-only="readOnly" mandatory="mandatory"></md-hours-minutes>' +
           '<md-meridiem ng-if="!noMeridiem" ng-model="ngModel" message="{{message.meridiem}}" read-only="readOnly" mandatory="mandatory"></md-meridiem>' +
           '</ng-form>',
         controller: ["$scope", "$rootScope", "$mdpTimePicker", "$attrs", function($scope, $rootScope, $mdpTimePicker, $attrs) {
